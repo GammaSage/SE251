@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)http://ict.neit.edu/008002464/public_html/SE251/Week1/loop3.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Level 0 Boss Challenge</title>
+
+  <meta name="description" content="Level 0">
+  <meta name="keywords" content="Level 0, Game Prototyping, New England Institute of Technology">
+  <meta name="author" content="John Doe">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<p></p>
+
+
+	<script type="text/javascript">
+	
+	var a = "string";
+	var b = 100;
+	var c = true;
+	
+	console.log("a: " + typeof a);
+	console.log("b: " + typeof b);
+	console.log("c: " + typeof c);
+	
+	var add = (5+2);
+	
+	console.log("5 + 2=" + add);
+	
+	var x = [];
+	
+for (var i=1; i < 101; i++){
+	x[i]={};
+    if (i % 6 == 0) x[i]={index:i, label:"Fizz Buzz"};
+    else if (i % 3 == 0) x[i]={index:i, label:"Buzz"};
+    else if (i % 2 == 0) x[i]={index:i, label:"Fizz"};
+    else x[i]={index:i};
+	
+		}
+		for(var i = 0; i < x.length; i++){
+			for(value in x[i]){
+			console.log(x[i][value])
+			}
+		/*for(value in x){
+		if (i % 6 == 0) {
+		console.log(x[i].label);
+		break;
+		}
+		else if (i % 3 == 0) {
+		console.log(x[i].label);
+		break;
+		}
+		else if (i % 2 == 0) {
+		console.log(x[i].label);
+		break;
+		}
+		else { console.log(x[i].index)
+		break;}
+	}*/
+}
+/*function loopy(limit){
+    var line,
+        words = [
+            [6, "Fizz Buzz"],
+            [3, "Buzz"],
+            [2, "Fizz"]
+        ];
+
+    for(var n = 1 ; n <= limit ; n++) {
+        line = null;
+        for(var i = 0, l = words.length ; i < l ; i++) {
+            if(n % words[i][0] === 0) {
+                line = words[i][1];
+                break;
+            }
+        }
+        console.log(line || n);
+    }
+}
+
+loopy(100);*/
+	</script>
+</body></html>
