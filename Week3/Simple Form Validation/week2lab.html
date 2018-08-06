@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Week 3 Lab</title>
+<link type="text/css" rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+
+<div id="form">
+	
+    <form name="info">
+    <p>
+    First Name <br />
+    <input type="text" id="firstName"/> <span id="fn-error"> </span>
+    </p>
+    
+    <p>
+   	Last Name <br />
+    <input type="text" id="lastName"/> <span id="ln-error"> </span>
+    </p>
+    
+     <p>
+   	Email <br />
+    <input type="text" id="email"/> <span id="email-error"> </span>
+    </p>
+    
+	<p>
+   	Confirm Email <br />
+    <input type="text" id="emailConfirm"/> <span id="emailConf_Error"> </span>
+    </p>
+    
+     <p>
+   	Phone Number <br />
+    <input type="text" id="phone"/> <span id="phone-error"> </span>
+    </p>
+    
+    <input type="button" id="button" value="submit" />
+    </form>
+
+</div>
+
+<div id="confirmation">
+	<h1>Confirmation</h1>
+    <p id="info">
+    </p>
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+var fnInput = document.querySelector("#firstName");
+var fnError = document.querySelector("#fn-error");
+
+var lnInput = document.querySelector("#lastName");
+var lnError = document.querySelector("#ln-error");
+
+var email = document.querySelector("#email");
+var emError = document.querySelector("#email-error");
+
+var emailConfirm = document.querySelector("#emailConfirm");
+var emailConfError = document.querySelector("#emailConf_Error");
+
+var phone = document.querySelector("#phone");
+var phoneError = document.querySelector("#phone-error"); 
+
+var button = document.querySelector("#button");
+
+var form = document.querySelector("#form");
+
+var confirmation = document.querySelector("#confirmation");
+
+function myFunction(){
+	var inputs = true;
+	if (fnInput.value == ""){
+		inputs = false;
+		fnError.innerHTML = "*";
+		fnError.classList.add("error");
+	}
+	
+	if (lnInput.value == ""){
+		inputs = false;
+		lnError.innerHTML = "*";
+		lnError.classList.add("error");
+	}
+	
+	if (email.value == ""){
+		inputs = false;
+		emError.innerHTML = "*";
+		emError.classList.add("error");
+	}
+	
+	if (emailConfirm.value == ""){
+		inputs = false;
+		emailConfError.innerHTML = "*";
+		emailConfError.classList.add("error");
+	}
+	
+	if (phone.value == ""){
+		inputs = false;
+		phoneError.innerHTML = "*";
+		phoneError.classList.add("error");
+	}
+	if (inputs == true) {
+		form.style.display = "none";
+		confirmation.style.visibility = "visible";
+		newConfirmation = document.createElement("div");
+		newConfirmation.innerHTML = 'First Name : ' + fnInput.value + '<br />' + ' Last Name : ' + lnInput.value + '<br />' + ' Email : ' + email.value + '<br />' + ' Email Confirmation : ' + emailConfirm.value + '<br />' + ' Phone number : ' + phone.value ;
+		confirmation.appendChild(newConfirmation);
+		console.log(newConfirmation.innerHTML);
+	}
+	}
+	button.addEventListener("click", myFunction);
+</script>
